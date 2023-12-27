@@ -9,9 +9,8 @@ export const App = () => {
       <h1 className={s.title}>Phonebook</h1>
       <Input />
       <h2 className={s.title2}>Contacts</h2>
-      <ContactsList>
-        <Filter />
-      </ContactsList>
+      <Filter />
+      <ContactsList />
     </div>
   );
 };
