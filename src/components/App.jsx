@@ -6,8 +6,17 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './Header/Header';
 import { NotFound } from 'pages/NotFound/NotFound';
 import Register from 'pages/Register/Register';
+import Login from 'pages/Login/Login';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshThunk } from 'store/auth/operation';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
   return (
     <div>
       <Header />
@@ -27,7 +36,7 @@ export const App = () => {
             }
           />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
