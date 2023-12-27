@@ -1,10 +1,11 @@
-import ContactsList from './ContactsList/ContactsList';
-import { Input } from './Input/Input';
-import { Filter } from './Filter/Filter';
+import ContactsList from '../pages/Contacts/ContactsList/ContactsList';
+import { Input } from '../pages/Contacts/Input/Input';
+import { Filter } from '../pages/Contacts/Filter/Filter';
 import s from './App.module.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Header/Header';
-import { NotFound } from 'pages/NotFound';
+import { NotFound } from 'pages/NotFound/NotFound';
+import Register from 'pages/Register/Register';
 
 export const App = () => {
   return (
@@ -25,8 +26,8 @@ export const App = () => {
               </>
             }
           />
-          <Route path="/register" element={<h1>Register</h1>} />
-          <Route path="/login" element={<h1>Login</h1>} />
+          <Route path="/register" element={<Register />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

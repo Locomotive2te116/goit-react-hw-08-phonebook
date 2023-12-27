@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import { ContactItem } from 'components/ContactItem/ContactItem';
+import { ContactItem } from 'pages/Contacts/ContactItem/ContactItem';
 import s from './ContactsList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContactsThunk } from '../../store/contacts/operations.js';
+import { fetchContactsThunk } from '../../../store/contacts/operations.js';
 import {
   getContacts,
   getFilter,
   SelectLoading,
   SelectError,
-} from '../../store/contacts/selector.js';
+} from '../../../store/contacts/selector.js';
 const ContactsList = () => {
   // { children }
   const contacts = useSelector(getContacts);
