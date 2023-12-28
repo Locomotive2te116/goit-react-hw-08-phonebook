@@ -1,6 +1,3 @@
-import ContactsList from '../pages/Contacts/ContactsList/ContactsList';
-import { Input } from '../pages/Contacts/Input/Input';
-import { Filter } from '../pages/Contacts/Filter/Filter';
 import s from './App.module.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Header/Header';
@@ -15,6 +12,7 @@ import { PublicRoute } from 'RoutesConfig/PublicRoute';
 import { selectIsRefresh } from 'store/auth/selector';
 import { Loader } from './Loader/Loader';
 import Home from './Home/Home';
+import Contacts from 'pages/Contacts/Contacts';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -35,11 +33,7 @@ export const App = () => {
             element={
               <>
                 <PrivateRoute>
-                  <h1 className={s.title}>Phonebook</h1>
-                  <Input />
-                  <h2 className={s.title2}>Contacts</h2>
-                  <Filter />
-                  <ContactsList />
+                  <Contacts />
                 </PrivateRoute>
               </>
             }
