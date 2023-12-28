@@ -1,8 +1,7 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { selectIsLoggedIn, selectUserName } from '../../store/auth/selector';
-import { logoutThunk } from 'store/auth/operation';
+import { selectIsLoggedIn } from '../../store/auth/selector';
 import UserMenu from 'components/UserMenu/UserMenu';
 
 const Header = () => {
