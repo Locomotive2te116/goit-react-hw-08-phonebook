@@ -30,8 +30,8 @@ const ContactsList = () => {
         <p>No contacts match your search</p>
       ) : (
         <ul className={s.contact_list}>
-          {filteredContacts?.map(({ id, name, phone }) => (
-            <ContactItem key={id} id={id} name={name} phone={phone} />
+          {filteredContacts?.map(({ id, name, number }) => (
+            <ContactItem key={id} id={id} name={name} number={number} />
           ))}
         </ul>
       )}
