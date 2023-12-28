@@ -13,7 +13,7 @@ import { refreshThunk } from 'store/auth/operation';
 import { PrivateRoute } from 'RoutesConfig/PrivateRoute';
 import { PublicRoute } from 'RoutesConfig/PublicRoute';
 import { selectIsRefresh } from 'store/auth/selector';
-import { Loader } from './Loader';
+import { Loader } from './Loader/Loader';
 import Home from './Home/Home';
 
 export const App = () => {
