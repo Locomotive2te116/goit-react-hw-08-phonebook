@@ -7,17 +7,23 @@ import Header from './Header/Header';
 import { NotFound } from 'pages/NotFound/NotFound';
 import Register from 'pages/Register/Register';
 import Login from 'pages/Login/Login';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshThunk } from 'store/auth/operation';
+import { PrivateRoute } from 'RoutesConfig/PrivateRoute';
+import { PublicRoute } from 'RoutesConfig/PublicRoute';
+import { selectIsRefresh } from 'store/auth/selector';
+import { Loader } from './Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
-
+  const isRefresh = useSelector(selectIsRefresh);
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
-  return (
+  return isRefresh ? (
+    <Loader />
+  ) : (
     <div>
       <Header />
       <div className={s.container}>
@@ -27,16 +33,32 @@ export const App = () => {
             path="/contacts"
             element={
               <>
-                <h1 className={s.title}>Phonebook</h1>
-                <Input />
-                <h2 className={s.title2}>Contacts</h2>
-                <Filter />
-                <ContactsList />
+                <PrivateRoute>
+                  <h1 className={s.title}>Phonebook</h1>
+                  <Input />
+                  <h2 className={s.title2}>Contacts</h2>
+                  <Filter />
+                  <ContactsList />
+                </PrivateRoute>
               </>
             }
           />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <Register />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
