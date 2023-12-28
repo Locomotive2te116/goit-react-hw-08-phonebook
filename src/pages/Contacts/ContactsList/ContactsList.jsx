@@ -10,7 +10,6 @@ import {
   SelectError,
 } from '../../../store/contacts/selector.js';
 const ContactsList = () => {
-  // { children }
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   const loading = useSelector(SelectLoading);
@@ -25,7 +24,6 @@ const ContactsList = () => {
 
   return (
     <>
-      {/* {children} */}
       {filteredContacts.length === 0 ? (
         <p>No contacts match your search</p>
       ) : (

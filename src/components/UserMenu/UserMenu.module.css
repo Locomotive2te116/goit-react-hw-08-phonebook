@@ -1,0 +1,32 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #010101;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgb(63, 63, 155);
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 38px;
+}
+.title2 {
+  margin: 20px 0;
+  font-size: 35px;
+}
+.button {
+  display: block;
+  background-color: rgb(248, 250, 139);
+  padding: 12px;
+  text-align: center;
+  color: rgba(17, 24, 39, 1);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  margin-left: 20px;
+}
