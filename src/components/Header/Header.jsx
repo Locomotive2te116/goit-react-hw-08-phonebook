@@ -13,7 +13,7 @@ const Header = () => {
 
       <div className={s.title2}>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/contacts">Contacts</NavLink>
+        {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
         {!isLoggedIn && (
           <>
             <NavLink to="/register">Sing Up</NavLink>
