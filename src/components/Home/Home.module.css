@@ -1,0 +1,8 @@
+.picture {
+  background-image: url('https://24tv.ua/resources/photos/news/201610/743057.jpg?v=1661284566000&w=1200&h=675&fit=cover&q=50');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1200px;
+  height: 900px;
+  margin-top: 20px;
+}
